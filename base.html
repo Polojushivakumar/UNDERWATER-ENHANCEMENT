@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwater Image Enhancement</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'img/img_h_8.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 3rem;
+        }
+        .navbar a {
+            color: #ffffff;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="header">
+        <h1 class="text-center">Underwater Image Enhancement</h1>
+        <div class="navbar text-center">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'UserLogin' %}">Users</a>
+            <a href="{% url 'UserRegister' %}">Registration</a>
+        </div>
+    </div>
+  {%block contents%}  
+  {%endblock%}
+</body>
+</html>
